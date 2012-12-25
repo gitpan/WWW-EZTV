@@ -1,6 +1,6 @@
 package WWW::EZTV::Episode;
 {
-  $WWW::EZTV::Episode::VERSION = '0.01';
+  $WWW::EZTV::Episode::VERSION = '0.02';
 }
 use Moose;
 with 'WWW::EZTV::UA';
@@ -81,7 +81,7 @@ WWW::EZTV::Episode - EZTV single episode
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 AUTHOR
 

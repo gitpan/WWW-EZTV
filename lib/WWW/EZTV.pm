@@ -1,6 +1,6 @@
 package WWW::EZTV;
 {
-  $WWW::EZTV::VERSION = '0.01';
+  $WWW::EZTV::VERSION = '0.02';
 }
 use Moose;
 with 'WWW::EZTV::UA';
@@ -35,12 +35,14 @@ sub _build_shows {
     });
 }
 
-
-
-
-
-
 1;
+
+
+
+
+
+
+
 
 __END__
 =pod
@@ -51,7 +53,7 @@ WWW::EZTV - EZTV scrapper
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -72,22 +74,37 @@ First create a WWW::EZTV object to navigate.
 =head1 ATTRIBUTES
 
 =head2 url
+
 EZTV URL.
 
 =head2 url_shows
+
 EZTV shows URL.
 
 =head2 shows
+
 L<Mojo::Collection> of L<WWW::EZTV::Show> objects.
 
 =head2 has_shows
+
 How many shows exists.
 
 =head1 METHODS
 
 =head2 find_show
+
 Find first L<WWW::EZTV::Show> object matching the given criteria. 
 This method accept an anon function.
+
+=head1 BUGS
+
+This is an early release, so probable there are plenty of bugs around.
+If you found one, please report it on RT or at the github repo:
+
+L<https://github.com/diegok/www-eztv>
+
+Pull requests are also very welcomed, but please include tests demostrating
+what you've fixed.
 
 =head1 AUTHOR
 

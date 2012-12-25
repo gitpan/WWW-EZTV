@@ -1,6 +1,6 @@
 package WWW::EZTV::Show;
 {
-  $WWW::EZTV::Show::VERSION = '0.01';
+  $WWW::EZTV::Show::VERSION = '0.02';
 }
 use Moose;
 with 'WWW::EZTV::UA';
@@ -91,7 +91,7 @@ WWW::EZTV::Show - EZTV show object
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 ATTRIBUTES
 
@@ -108,14 +108,17 @@ version 0.01
 =head2 rating
 
 =head2 episodes
+
 Collection of episodes fetched for this show.
 
 =head2 has_episodes
+
 How many episodes has this show.
 
 =head1 METHODS
 
 =head2 find_episode
+
 Find first L<WWW::EZTV::Episode> object matching the given criteria. 
 This method accept an anon function.
 

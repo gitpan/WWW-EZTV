@@ -1,16 +1,21 @@
 package WWW::EZTV::Episode;
 {
-  $WWW::EZTV::Episode::VERSION = '0.02';
+  $WWW::EZTV::Episode::VERSION = '0.03';
 }
 use Moose;
 with 'WWW::EZTV::UA';
 
-# ABSTRACT: EZTV single episode
+# ABSTRACT: Show episode
 
 has show     => is => 'ro', isa => 'WWW::EZTV::Show', required => 1;
 has title    => is => 'ro', isa => 'Str', required => 1;
 has url      => is => 'ro', isa => 'Mojo::URL', required => 1;
-has links    => is => 'rw';
+has links    => 
+    is      => 'ro',
+    handles => {
+        find_link => 'first',
+        has_links => 'size',
+    };
 
 has _parsed  => is => 'ro', lazy => 1, builder => '_parse';
 
@@ -72,16 +77,31 @@ sub _parse {
 
 1;
 
+
+
 __END__
 =pod
 
 =head1 NAME
 
-WWW::EZTV::Episode - EZTV single episode
+WWW::EZTV::Episode - Show episode
 
 =head1 VERSION
 
-version 0.02
+version 0.03
+
+=head1 ATTRIBUTES
+
+=head2 has_links
+
+How many episodes has this show.
+
+=head1 METHODS
+
+=head2 find_link
+
+Find first L<WWW::EZTV::Link> object matching the given criteria. 
+This method accept an anon function.
 
 =head1 AUTHOR
 

@@ -1,6 +1,6 @@
 package WWW::EZTV::UA;
 {
-  $WWW::EZTV::UA::VERSION = '0.02';
+  $WWW::EZTV::UA::VERSION = '0.03';
 }
 use Moose::Role;
 use Mojo::UserAgent;
@@ -34,7 +34,7 @@ WWW::EZTV::UA - User agent for EZTV scrapper.
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 METHODS
 

@@ -1,13 +1,13 @@
 package WWW::EZTV::Show;
 {
-  $WWW::EZTV::Show::VERSION = '0.02';
+  $WWW::EZTV::Show::VERSION = '0.03';
 }
 use Moose;
 with 'WWW::EZTV::UA';
 use WWW::EZTV::Link;
 use WWW::EZTV::Episode;
 
-# ABSTRACT: EZTV show object
+# ABSTRACT: Show object
 
 has title    => is => 'ro', isa => 'Str', required => 1;
 has name     => is => 'ro', lazy => 1, default => \&_name;
@@ -87,11 +87,11 @@ __END__
 
 =head1 NAME
 
-WWW::EZTV::Show - EZTV show object
+WWW::EZTV::Show - Show object
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 ATTRIBUTES
 

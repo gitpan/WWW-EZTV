@@ -1,6 +1,6 @@
 package WWW::EZTV::Show;
 {
-  $WWW::EZTV::Show::VERSION = '0.03';
+  $WWW::EZTV::Show::VERSION = '0.04';
 }
 use Moose;
 with 'WWW::EZTV::UA';
@@ -31,10 +31,10 @@ sub _build_episodes {
         my $a  = $tr->at('td:nth-child(2) a');
 
         WWW::EZTV::Episode->new(
-            title    => $a->attrs('title'),
-            url      => $self->url->clone->path($a->attrs('href')),
+            title    => $a->attr('title'),
+            url      => $self->url->clone->path($a->attr('href')),
             links    => $tr->find('td:nth-child(3) a')->map(sub{
-                WWW::EZTV::Link->new( url => shift->attrs('href') )
+                WWW::EZTV::Link->new( url => shift->attr('href') )
             }),
             released => $tr->at('td:nth-child(4)')->all_text,
             show     => $self
@@ -72,18 +72,11 @@ sub _cleanup_str {
 
 1;
 
-
-
-
-
-
-
-
-
-
-
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -91,7 +84,7 @@ WWW::EZTV::Show - Show object
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 ATTRIBUTES
 
@@ -134,4 +127,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

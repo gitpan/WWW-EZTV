@@ -1,6 +1,6 @@
 package WWW::EZTV;
 {
-  $WWW::EZTV::VERSION = '0.03';
+  $WWW::EZTV::VERSION = '0.04';
 }
 use Moose;
 with 'WWW::EZTV::UA';
@@ -28,7 +28,7 @@ sub _build_shows {
         my $link = $tr->at('td:nth-child(1) a');
         WWW::EZTV::Show->new(
             title  => $link->all_text,
-            url    => $self->url->clone->path($link->attrs('href')),
+            url    => $self->url->clone->path($link->attr('href')),
             status => lc($tr->at('td:nth-child(2)')->all_text),
             rating => $tr->at('td:nth-child(3)')->all_text
         );
@@ -37,15 +37,11 @@ sub _build_shows {
 
 1;
 
-
-
-
-
-
-
-
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -53,7 +49,7 @@ WWW::EZTV - EZTV scrapper
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -122,4 +118,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

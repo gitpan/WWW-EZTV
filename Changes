@@ -1,3 +1,8 @@
+0.05      2013-12-29 13:14:23 Europe/Madrid
+
+    - Force upgrade of Mojolicious to 4.X (no auto version from UA)
+    - Small error and tests refactor
+
 0.04      2013-12-25 23:15:03 Europe/Madrid
 
     - Code updated for Mojo:UserAgent 4.X

@@ -21,6 +21,7 @@ my %WriteMakefileArgs = (
   "NAME" => "WWW::EZTV",
   "PREREQ_PM" => {
     "Mojo::UserAgent" => 0,
+    "Mojolicious" => "4.63",
     "Moose" => 0,
     "Moose::Role" => 0
   },
@@ -28,7 +29,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.96",
     "strict" => 0
   },
-  "VERSION" => "0.04",
+  "VERSION" => "0.05",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -37,6 +38,7 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Mojo::UserAgent" => 0,
+  "Mojolicious" => "4.63",
   "Moose" => 0,
   "Moose::Role" => 0,
   "Test::More" => "0.96",

@@ -1,6 +1,6 @@
 package WWW::EZTV::Link;
 {
-  $WWW::EZTV::Link::VERSION = '0.04';
+  $WWW::EZTV::Link::VERSION = '0.05';
 }
 use Moose;
 with 'WWW::EZTV::UA';
@@ -30,7 +30,6 @@ sub _guess_type {
 1;
 
 __END__
-
 =pod
 
 =encoding UTF-8
@@ -41,7 +40,7 @@ WWW::EZTV::Link - Episode link
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 ATTRIBUTES
 
@@ -70,3 +69,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

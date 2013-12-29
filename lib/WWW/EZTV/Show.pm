@@ -1,6 +1,6 @@
 package WWW::EZTV::Show;
 {
-  $WWW::EZTV::Show::VERSION = '0.04';
+  $WWW::EZTV::Show::VERSION = '0.05';
 }
 use Moose;
 with 'WWW::EZTV::UA';
@@ -72,8 +72,17 @@ sub _cleanup_str {
 
 1;
 
-__END__
 
+
+
+
+
+
+
+
+
+
+__END__
 =pod
 
 =encoding UTF-8
@@ -84,7 +93,7 @@ WWW::EZTV::Show - Show object
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 ATTRIBUTES
 
@@ -127,3 +136,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

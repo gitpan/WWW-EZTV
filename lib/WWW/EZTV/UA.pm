@@ -1,6 +1,6 @@
 package WWW::EZTV::UA;
 {
-  $WWW::EZTV::UA::VERSION = '0.04';
+  $WWW::EZTV::UA::VERSION = '0.05';
 }
 use Moose::Role;
 use Mojo::UserAgent;
@@ -19,14 +19,13 @@ sub get_response {
     else {
         my ($err, $code) = $tx->error;
         my $message = shift || 'User agent error';
-        die "$message: $err ($code)";
+        confess sprintf('%s: %s (%s)', $message, $err, $code||'no error code');
     }
 }
 
 1;
 
 __END__
-
 =pod
 
 =encoding UTF-8
@@ -37,7 +36,7 @@ WWW::EZTV::UA - User agent for EZTV scrapper.
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 METHODS
 
@@ -55,3 +54,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
